@@ -19,6 +19,8 @@ RUN cd $CA_PROVIDENCE_DIR \
     && cd /var/www \
     && mv $CA_PROVIDENCE_DIR providence
 
+ENV CA_PROVIDENCE_DIR=/var/www/providence
+
 ADD php.ini /etc/php5/apache2/php.ini
 
 COPY entrypoint.sh /entrypoint.sh
