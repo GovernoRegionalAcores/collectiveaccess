@@ -1,6 +1,6 @@
 FROM reinblau/php-apache2
 
-ENV CA_PROVIDENCE_VERSION=1.6
+ENV CA_PROVIDENCE_VERSION=1.6.1
 ENV CA_PROVIDENCE_DIR=/var/www/providence-$CA_PROVIDENCE_VERSION
 ENV CA_PAWTUCKET_DIR=/var/www
 
@@ -18,6 +18,8 @@ RUN cd $CA_PROVIDENCE_DIR \
     && mv setup.php-dist setup.php \
     && cd /var/www \
     && mv $CA_PROVIDENCE_DIR providence
+
+ENV CA_PROVIDENCE_DIR=/var/www/providence
 
 ADD php.ini /etc/php5/apache2/php.ini
 
