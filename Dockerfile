@@ -33,9 +33,9 @@ RUN curl -SsL https://github.com/collectiveaccess/providence/archive/$CA_PROVIDE
 RUN mv /var/www/providence-$CA_PROVIDENCE_VERSION /var/www/providence
 RUN cd $CA_PROVIDENCE_DIR && cp setup.php-dist setup.php
 
-RUN wget -P $CA_PAWTUCKET_DIR https://github.com/collectiveaccess/pawtucket2/archive/develop.zip
-RUN unzip $CA_PAWTUCKET_DIR/develop.zip -d $CA_PAWTUCKET_DIR
-RUN mv $CA_PAWTUCKET_DIR/pawtucket2-develop/* /var/www
+RUN wget -P $CA_PAWTUCKET_DIR https://github.com/collectiveaccess/pawtucket2/archive/master.zip
+RUN unzip $CA_PAWTUCKET_DIR/master.zip -d $CA_PAWTUCKET_DIR
+RUN mv $CA_PAWTUCKET_DIR/pawtucket2-master/* /var/www
 RUN cd $CA_PAWTUCKET_DIR && cp setup.php-dist setup.php
 
 RUN sed -i "s@DocumentRoot \/var\/www\/html@DocumentRoot \/var\/www@g" /etc/apache2/sites-available/000-default.conf
