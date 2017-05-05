@@ -27,7 +27,8 @@ RUN apt-get update && apt-get install -y apache2 \
 					ffmpeg \
 					ghostscript \
 					imagemagick \
-					php7.0-gd
+					php7.0-gd \
+					libreoffice
 
 
 #GRAPHICSMAGICK
