@@ -30,12 +30,17 @@ RUN apt-get update && apt-get install -y apache2 \
 					php7.0-gd
 
 
+#GRAPHICSMAGICK
+RUN apt-get install -y python-software-properties software-properties-common \
+	&& add-apt-repository ppa:rwky/graphicsmagick \
+	&& apt-get update \
+	&& apt-get install -y graphicsmagick 
+
 RUN curl -SsL https://github.com/collectiveaccess/providence/archive/$CA_PROVIDENCE_VERSION.tar.gz | tar -C /var/www/ -xzf -
 RUN mv /var/www/providence-$CA_PROVIDENCE_VERSION /var/www/providence
 RUN cd $CA_PROVIDENCE_DIR && cp setup.php-dist setup.php
 
 RUN curl -SsL https://github.com/collectiveaccess/pawtucket2/archive/$CA_PAWTUCKET_VERSION.tar.gz | tar -C /var/www/ -xzf -
-#RUN unzip $CA_PAWTUCKET_DIR/$CA_PAWTUCKET_VERSION.tar.gz -d $CA_PAWTUCKET_DIR
 RUN mv $CA_PAWTUCKET_DIR/pawtucket2-$CA_PAWTUCKET_VERSION/* /var/www
 RUN cd $CA_PAWTUCKET_DIR && cp setup.php-dist setup.php
 
