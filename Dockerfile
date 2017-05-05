@@ -28,8 +28,8 @@ RUN apt-get update && apt-get install -y apache2 \
 					ghostscript \
 					imagemagick \
 					php7.0-gd \
-					libreoffice
-
+					libreoffice \
+					php7.0-zip
 
 #GRAPHICSMAGICK
 RUN apt-get install -y python-software-properties software-properties-common \
