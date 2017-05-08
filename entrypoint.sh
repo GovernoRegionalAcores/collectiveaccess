@@ -9,6 +9,7 @@ cd $CA_PROVIDENCE_DIR/media/collectiveaccess && mkdir -p tilepics
 cd $CA_PAWTUCKET_DIR && chown www-data:www-data . -R && chmod -R u+rX .
 cd $CA_PROVIDENCE_DIR && chown www-data:www-data . -R && chmod -R u+rX .
 
+
 sweep() {
 	local ca="$ca"
 	sed -i "s@define(\"__CA_DB_HOST__\", 'localhost');@define(\"__CA_DB_HOST__\", \'$MYSQL_PORT_3306_TCP_ADDR\');@g" setup.php
