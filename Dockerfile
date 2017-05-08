@@ -33,8 +33,7 @@ RUN apt-get update && apt-get install -y apache2 \
 
 #GMAGICK
 RUN apt-get install -y php-pear php7.0-dev graphicsmagick libgraphicsmagick1-dev \
-	&& pecl install gmagick-2.0.4RC1 \
-	&& echo "extension=gmagick.so" >> /etc/php/7.0/apache2/php.ini
+	&& pecl install gmagick-2.0.4RC1
 
 RUN curl -SsL https://github.com/collectiveaccess/providence/archive/$CA_PROVIDENCE_VERSION.tar.gz | tar -C /var/www/ -xzf -
 RUN mv /var/www/providence-$CA_PROVIDENCE_VERSION /var/www/providence
