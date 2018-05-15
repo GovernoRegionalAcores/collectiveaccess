@@ -8,9 +8,9 @@ ENV APACHE_RUN_DIR      /var/run/apache2
 ENV APACHE_LOCK_DIR     /var/lock/apache2
 ENV APACHE_LOG_DIR      /var/log/apache2
 
-ENV CA_PROVIDENCE_VERSION=1.7.2
+ENV CA_PROVIDENCE_VERSION=1.7.6
 ENV CA_PROVIDENCE_DIR=/var/www/providence
-ENV CA_PAWTUCKET_VERSION=1.7
+ENV CA_PAWTUCKET_VERSION=1.7.6
 ENV CA_PAWTUCKET_DIR=/var/www
 
 RUN apt-get update && apt-get install -y apache2 \
